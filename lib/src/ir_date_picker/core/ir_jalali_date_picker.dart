@@ -16,6 +16,7 @@ class IRJalaliDatePicker extends StatefulWidget {
   final int? minYear;
   final int? maxYear;
   final bool visibleTodayButton;
+  final bool? visibleDays;
   final String todayButtonText;
   final BoxConstraints? constraints;
   final IRJalaliDatePickerOnSelected onSelected;
@@ -30,6 +31,7 @@ class IRJalaliDatePicker extends StatefulWidget {
     this.initialDate,
     this.minYear,
     this.maxYear,
+    this.visibleDays,
     this.visibleTodayButton = true,
     required this.todayButtonText,
     this.constraints,
@@ -119,7 +121,7 @@ class _IRJalaliDatePickerState extends State<IRJalaliDatePicker> {
                 widget.onSelected(_getSelectedJalaliDate());
               },
             ),
-            _cupertinoPicker(
+           if(widget.visibleDays != false) _cupertinoPicker(
               context: context,
               list: _days,
               initialItem: _days.indexOf(_selectedDay),
