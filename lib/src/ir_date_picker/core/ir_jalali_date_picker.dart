@@ -25,6 +25,7 @@ class IRJalaliDatePicker extends StatefulWidget {
   final double magnification;
   final double offAxisFraction;
   final double squeeze;
+  final Widget? selectionOverlay;
 
   const IRJalaliDatePicker({
     super.key,
@@ -41,6 +42,7 @@ class IRJalaliDatePicker extends StatefulWidget {
     this.magnification = 1.3,
     this.offAxisFraction = 0.0,
     this.squeeze = 1.3,
+    this.selectionOverlay,
   });
 
   @override
@@ -208,7 +210,7 @@ class _IRJalaliDatePickerState extends State<IRJalaliDatePicker> {
         magnification: widget.magnification,
         offAxisFraction: widget.offAxisFraction,
         squeeze: widget.squeeze,
-        selectionOverlay: Container(
+        selectionOverlay: selectionOverlay ?? Container(
           decoration: BoxDecoration(
             border: Border(
               top: BorderSide(
