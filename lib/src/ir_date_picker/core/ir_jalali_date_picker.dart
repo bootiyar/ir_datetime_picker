@@ -210,7 +210,7 @@ class _IRJalaliDatePickerState extends State<IRJalaliDatePicker> {
         magnification: widget.magnification,
         offAxisFraction: widget.offAxisFraction,
         squeeze: widget.squeeze,
-        selectionOverlay: selectionOverlay ?? Container(
+        selectionOverlay: widget.selectionOverlay ?? Container(
           decoration: BoxDecoration(
             border: Border(
               top: BorderSide(
